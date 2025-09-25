@@ -1,0 +1,44 @@
+"use client";
+import React from 'react';
+
+export default function Header() {
+  return (
+    <header className="absolute top-0 left-0 right-0 z-50 p-6">
+      <nav className="flex items-center justify-center relative">
+        {/* Logo */}
+        <div className="absolute left-0 flex items-center space-x-2">
+            <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
+          <span className="text-white text-xl font-bold">Carbonize</span>
+        </div>
+
+        {/* Navigation Links - Centered */}
+        <div className="hidden md:flex items-center space-x-8">
+          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+            Home
+          </a>
+          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+            How It Works
+          </a>
+          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+            Featured
+          </a>
+          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+            Why Choose Us
+          </a>
+          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+            About Us
+          </a>
+        </div>
+
+        {/* Mobile menu button */}
+        <div className="absolute right-0 md:hidden">
+          <button className="text-white">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+  );
+}
