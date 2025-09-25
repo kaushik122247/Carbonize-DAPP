@@ -6,7 +6,7 @@ export default function HeroContent() {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center z-10 px-4">
       {/* Main Title */}
-      <div className="text-center mt-15">
+      <div className="text-center mt-22">
         <h1 className="text-6xl md:text-8xl lg:text-9xl xl:text-[8.5rem] font-bold text-white mb-6">
           <span className="block">Tokenize</span>
         </h1>
