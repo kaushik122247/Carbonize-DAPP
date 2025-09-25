@@ -36,7 +36,7 @@ function Earth({ className }: EarthProps) {
   const { x, y, z } = sunDirection;
   
   return (
-    <div className={`${className} backdrop-blur-sm`}>
+    <div className={className}>
       <Canvas 
         camera={{ position: [0, 0.1, 5] }}
         gl={{ 
@@ -44,7 +44,7 @@ function Earth({ className }: EarthProps) {
           alpha: true,
           antialias: true 
         }}
-        style={{ filter: 'blur(2px) brightness(0.95)' }}
+        style={{ filter: 'blur(0px) brightness(0.95)' }}
       >
         <EarthMesh />
         <hemisphereLight args={[0xffffff, 0x000000, 3.0]} />

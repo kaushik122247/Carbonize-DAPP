@@ -4,7 +4,7 @@ import CardSwap, { Card } from './CardSwap';
 
 const WhyChooseUs = () => {
   return (
-    <section className="min-h-screen w-full bg-gradient-to-b from-black via-gray-900 to-black py-15">
+    <section id="why-choose-us" className="min-h-screen w-full bg-black py-20">
       <div className="container mx-auto px-4">
         {/* Main Heading */}
         <div className="text-center mb-16">
@@ -20,7 +20,7 @@ const WhyChooseUs = () => {
         </div>
         
         {/* CardSwap Component */}
-        <div className='flex justify-end mb-20'>
+        <div className='flex justify-end mb-10'>
         <div className='relative' style={{ height: '500px', width: '500px',  }}>
           <CardSwap
             width={730}

@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import HeroContent from '@/components/HeroContent';
 import Earth from '@/components/Earth';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import Team from '@/components/Team';
 
 export default function Home() {
   return (
@@ -42,6 +43,9 @@ export default function Home() {
 
       {/* Why Choose Us Section */}
       <WhyChooseUs />
+      
+      {/* Team Section */}
+      <Team />
     </>
   );
 }

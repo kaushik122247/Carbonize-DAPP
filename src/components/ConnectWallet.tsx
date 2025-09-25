@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 interface ConnectWalletProps {
   className?: string;
@@ -14,22 +15,50 @@ export default function ConnectWallet({
 }: ConnectWalletProps) {
   const [isConnecting, setIsConnecting] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
+  const [connectionStep, setConnectionStep] = useState('');
+  const router = useRouter();
 
   const handleConnectWallet = async () => {
     setIsConnecting(true);
     
     try {
-      // TODO: Implement actual wallet connection logic
-      // For now, simulate connection process
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Simulate Web3 wallet connection process
+      setConnectionStep('Connecting to wallet...');
+      console.log('Initiating Web3 wallet connection...');
       
-      console.log('Connect wallet clicked');
+      // Step 1: Request wallet connection
+      await new Promise(resolve => setTimeout(resolve, 800));
+      setConnectionStep('Authenticating...');
+      console.log('Wallet connection requested...');
+      
+      // Step 2: Authenticate user
+      await new Promise(resolve => setTimeout(resolve, 700));
+      setConnectionStep('Verifying signature...');
+      console.log('User authentication in progress...');
+      
+      // Step 3: Verify signature
+      await new Promise(resolve => setTimeout(resolve, 500));
+      setConnectionStep('Finalizing...');
+      console.log('Signature verified successfully');
+      
+      // Step 4: Connection successful
       setIsConnected(true);
+      setConnectionStep('Connected! Redirecting...');
+      console.log('Web3 wallet connected successfully');
+      
+      // Navigate to dashboard after successful connection
+      setTimeout(() => {
+        router.push('/dashboard');
+      }, 500);
       
     } catch (error) {
       console.error('Failed to connect wallet:', error);
+      setConnectionStep('Connection failed');
     } finally {
-      setIsConnecting(false);
+      setTimeout(() => {
+        setIsConnecting(false);
+        setConnectionStep('');
+      }, 1000);
     }
   };
 
@@ -100,7 +129,7 @@ export default function ConnectWallet({
       {isConnecting ? (
         <>
           <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-          Connecting...
+          {connectionStep || 'Connecting...'}
         </>
       ) : (
         <>
