@@ -6,12 +6,16 @@ interface ConnectWalletProps {
   className?: string;
   size?: 'small' | 'medium' | 'large';
   variant?: 'primary' | 'secondary' | 'outline';
+  disableFloatAnimation?: boolean;
+  disableHoverColorChange?: boolean;
 }
 
 export default function ConnectWallet({ 
   className = '', 
   size = 'large',
-  variant = 'outline'
+  variant = 'outline',
+  disableFloatAnimation = false,
+  disableHoverColorChange = false
 }: ConnectWalletProps) {
   const [isConnecting, setIsConnecting] = useState(false);
   const [isConnected, setIsConnected] = useState(false);
@@ -76,16 +80,22 @@ export default function ConnectWallet({
 
   // Variant styles
   const variantClasses = {
-    primary: 'bg-green-500 text-white border-2 border-green-500 hover:bg-green-600 hover:border-green-600',
-    secondary: 'bg-white text-green-500 border-2 border-white hover:bg-gray-100',
-    outline: 'bg-transparent text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-black'
+    primary: disableHoverColorChange 
+      ? 'bg-green-500 text-white border-2 border-green-500'
+      : 'bg-green-500 text-white border-2 border-green-500 hover:bg-green-600 hover:border-green-600',
+    secondary: disableHoverColorChange
+      ? 'bg-white text-green-500 border-2 border-white'
+      : 'bg-white text-green-500 border-2 border-white hover:bg-gray-100',
+    outline: disableHoverColorChange
+      ? 'bg-transparent text-green-400 border-2 border-green-400'
+      : 'bg-transparent text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-black'
   };
 
   const baseClasses = `
     font-semibold rounded-lg transition-all duration-300 transform hover:scale-105
     disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
     flex items-center justify-center gap-2
-    animate-float shadow-lg hover:shadow-2xl
+    ${disableFloatAnimation ? '' : 'animate-float'} shadow-lg hover:shadow-2xl
   `;
 
   if (isConnected) {

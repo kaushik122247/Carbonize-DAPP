@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import ParticleBackground from './ParticleBackground';
 
 const Team = () => {
   const teamMembers = [
@@ -60,8 +61,19 @@ const Team = () => {
   ];
 
   return (
-    <section id="team" className="min-h-screen w-full bg-black py-20">
-      <div className="container mx-auto px-4">
+    <section id="team" className="min-h-screen w-full bg-black py-20 relative overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground 
+        particleCount={80}
+        particleColor="#10b981"
+        connectionColor="#10b981"
+        speed={0.3}
+        connectionDistance={100}
+        particleSize={2}
+        opacity={0.4}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">

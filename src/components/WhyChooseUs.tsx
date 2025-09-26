@@ -1,11 +1,23 @@
 "use client";
 import React from 'react';
 import CardSwap, { Card } from './CardSwap';
+import ParticleBackground from './ParticleBackground';
 
 const WhyChooseUs = () => {
   return (
-    <section id="why-choose-us" className="min-h-screen w-full bg-black py-20">
-      <div className="container mx-auto px-4">
+    <section id="why-choose-us" className="min-h-screen w-full bg-black py-20 relative overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground 
+        particleCount={80}
+        particleColor="#3b82f6"
+        connectionColor="#3b82f6"
+        speed={0.4}
+        connectionDistance={100}
+        particleSize={1.5}
+        opacity={0.4}
+      />
+      
+      <div className="container mx-auto px-4 relative z-10">
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">

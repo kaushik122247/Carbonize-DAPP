@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import ConnectWallet from './ConnectWallet';
 
 export default function Header() {
   return (
@@ -33,8 +34,26 @@ export default function Header() {
           </a>
         </div>
 
-        {/* Mobile menu button */}
-        <div className="absolute right-0 md:hidden">
+        {/* Connect Wallet Button - Desktop */}
+        <div className="absolute right-0 hidden md:block">
+          <ConnectWallet 
+            size="small"
+            variant="outline"
+            className="px-4 py-2 text-sm"
+            disableFloatAnimation={true}
+            disableHoverColorChange={true}
+          />
+        </div>
+
+        {/* Mobile menu button and Connect Wallet */}
+        <div className="absolute right-0 md:hidden flex items-center space-x-2">
+          <ConnectWallet 
+            size="small"
+            variant="outline"
+            className="px-3 py-1.5 text-xs"
+            disableFloatAnimation={true}
+            disableHoverColorChange={true}
+          />
           <button className="text-white">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
