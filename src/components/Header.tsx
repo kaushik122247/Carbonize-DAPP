@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import ConnectWallet from './ConnectWallet';
+import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react';
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
       <nav className="flex items-center justify-center relative">
         {/* Logo */}
         <div className="absolute left-0 flex items-center space-x-2">
-            <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
+          <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
           <span className="text-white text-xl font-bold">Carbonize</span>
         </div>
 
@@ -26,7 +27,7 @@ export default function Header() {
           <a href="#why-choose-us" className="text-white hover:text-green-400 transition-colors duration-0">
             Why Choose Us
           </a>
-           <a href="#team" className="text-white hover:text-green-400 transition-colors duration-300">
+          <a href="#team" className="text-white hover:text-green-400 transition-colors duration-300">
             Team
           </a>
           <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
@@ -36,18 +37,20 @@ export default function Header() {
 
         {/* Connect Wallet Button - Desktop */}
         <div className="absolute right-0 hidden md:block">
-          <ConnectWallet 
-            size="small"
-            variant="outline"
-            className="px-4 py-2 text-sm"
-            disableFloatAnimation={true}
-            disableHoverColorChange={true}
-          />
+          <AptosWalletAdapterProvider>
+            <ConnectWallet
+              size="small"
+              variant="outline"
+              className="px-4 py-2 text-sm"
+              disableFloatAnimation={true}
+              disableHoverColorChange={true}
+            />
+          </AptosWalletAdapterProvider>
         </div>
 
         {/* Mobile menu button and Connect Wallet */}
         <div className="absolute right-0 md:hidden flex items-center space-x-2">
-          <ConnectWallet 
+          <ConnectWallet
             size="small"
             variant="outline"
             className="px-3 py-1.5 text-xs"

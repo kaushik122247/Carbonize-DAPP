@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { groupAndSortWallets, useWallet } from '@aptos-labs/wallet-adapter-react';
 
 interface ConnectWalletProps {
   className?: string;
@@ -22,33 +23,40 @@ export default function ConnectWallet({
   const [connectionStep, setConnectionStep] = useState('');
   const router = useRouter();
 
+  const { wallets = [], notDetectedWallets = [] } = useWallet();
+  const { aptosConnectWallets, availableWallets, installableWallets } = groupAndSortWallets([...wallets, ...notDetectedWallets]);
+
+  console.log('Available Wallets:', availableWallets);
+  console.log('Installable Wallets:', installableWallets);
+  console.log('Aptos Connect Wallets:', aptosConnectWallets);
+
   const handleConnectWallet = async () => {
     setIsConnecting(true);
     
     try {
       // Simulate Web3 wallet connection process
       setConnectionStep('Connecting to wallet...');
-      console.log('Initiating Web3 wallet connection...');
+      // console.log('Initiating Web3 wallet connection...');
       
       // Step 1: Request wallet connection
       await new Promise(resolve => setTimeout(resolve, 800));
       setConnectionStep('Authenticating...');
-      console.log('Wallet connection requested...');
+      // console.log('Wallet connection requested...');
       
       // Step 2: Authenticate user
       await new Promise(resolve => setTimeout(resolve, 700));
       setConnectionStep('Verifying signature...');
-      console.log('User authentication in progress...');
+      // console.log('User authentication in progress...');
       
       // Step 3: Verify signature
       await new Promise(resolve => setTimeout(resolve, 500));
       setConnectionStep('Finalizing...');
-      console.log('Signature verified successfully');
+      // console.log('Signature verified successfully');
       
       // Step 4: Connection successful
       setIsConnected(true);
       setConnectionStep('Connected! Redirecting...');
-      console.log('Web3 wallet connected successfully');
+      // console.log('Web3 wallet connected successfully');
       
       // Navigate to dashboard after successful connection
       setTimeout(() => {
