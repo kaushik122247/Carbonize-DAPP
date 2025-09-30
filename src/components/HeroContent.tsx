@@ -12,13 +12,52 @@ export default function HeroContent() {
         
         {/* Text content */}
         <div className="relative z-10">
-          <h1 className="text-6xl md:text-8xl lg:text-9xl xl:text-[8.5rem] font-bold text-white mb-6">
+          <h1 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[8.5rem] font-bold text-white mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">Tokenize</span>
           </h1>
-          <div className="text-6xl md:text-8xl lg:text-9xl xl:text-[7rem] font-bold text-green-700 mb-6">
+          <div 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[7rem] font-bold text-white-700 mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">Carbon Credits</span>
           </div>
-          <h1 className="text-6xl md:text-8xl lg:text-9xl xl:text-[6rem] font-bold text-white mb-6">
+          <h1 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[6rem] font-bold text-white mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">as NFTs</span>
           </h1>
         </div>
