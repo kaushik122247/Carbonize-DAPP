@@ -1,11 +1,77 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Modern Typography System */
+.font-inter {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.font-space {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Hackathon-Ready Color Palette */
+:root {
+  --primary-green: #00d4aa;
+  --primary-green-light: #1ae5be;
+  --primary-green-dark: #00b894;
+  --accent-cyan: #00cec9;
+  --accent-blue: #0984e3;
+  --neutral-100: #f8fafc;
+  --neutral-200: #e2e8f0;
+  --neutral-800: #1e293b;
+  --neutral-900: #0f172a;
+  --dark-bg: #020617;
+  --card-bg: rgba(15, 23, 42, 0.8);
+}
+
+/* Custom Color Classes */
+.text-primary-green { color: var(--primary-green); }
+.text-primary-green-light { color: var(--primary-green-light); }
+.text-accent-cyan { color: var(--accent-cyan); }
+.text-accent-blue { color: var(--accent-blue); }
+.bg-primary-green { background-color: var(--primary-green); }
+.bg-dark-bg { background-color: var(--dark-bg); }
+.bg-card { background-color: var(--card-bg); }
+
+.border-primary-green { border-color: var(--primary-green); }
+.border-accent-cyan { border-color: var(--accent-cyan); }
+
+/* Text Gradient Effects */
+.text-gradient-primary {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--accent-cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Enhanced Typography */
+.hero-text {
+  font-feature-settings: 'kern' 1, 'liga' 1, 'ss01' 1;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.025em;
+}
+
+.hero-subtitle {
+  font-feature-settings: 'kern' 1, 'liga' 1;
+  text-rendering: optimizeLegibility;
+  letter-spacing: -0.015em;
+}
+
 /* Custom styles for the hero page */
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--dark-bg);
 }
 
 /* Smooth scrolling for anchor links */

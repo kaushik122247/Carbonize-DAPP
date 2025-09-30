@@ -10,27 +10,27 @@ export default function Header() {
         {/* Logo */}
         <div className="absolute left-0 flex items-center space-x-2">
           <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
-          <span className="text-white text-xl font-bold">Carbonize</span>
+          <span className="text-white text-xl font-bold font-space">Carbonize</span>
         </div>
 
         {/* Navigation Links - Centered */}
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+        <div className="hidden md:flex items-center space-x-8 font-inter">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Home
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             How It Works
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Featured
           </a>
-          <a href="#why-choose-us" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#why-choose-us" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Why Choose Us
           </a>
-          <a href="#team" className="text-white hover:text-green-400 transition-colors duration-300">
+          <a href="#team" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Team
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             About Us
           </a>
         </div>

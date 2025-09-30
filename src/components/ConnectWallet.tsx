@@ -1,7 +1,8 @@
 "use client";
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { groupAndSortWallets, useWallet } from '@aptos-labs/wallet-adapter-react';
+import { useAuth } from '@/components/providers/AuthProvider';
+import Web3AuthModal from '@/components/Web3AuthModal';
 
 interface ConnectWalletProps {
   className?: string;
@@ -18,64 +19,47 @@ export default function ConnectWallet({
   disableFloatAnimation = false,
   disableHoverColorChange = false
 }: ConnectWalletProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
-  const [isConnected, setIsConnected] = useState(false);
   const [connectionStep, setConnectionStep] = useState('');
   const router = useRouter();
+  const { isAuthenticated, user, login, logout } = useAuth();
 
-  const { wallets = [], notDetectedWallets = [] } = useWallet();
-  const { aptosConnectWallets, availableWallets, installableWallets } = groupAndSortWallets([...wallets, ...notDetectedWallets]);
+  // Wallet adapter related code removed for simplicity
 
-  console.log('Available Wallets:', availableWallets);
-  console.log('Installable Wallets:', installableWallets);
-  console.log('Aptos Connect Wallets:', aptosConnectWallets);
+  const handleConnectWallet = () => {
+    setIsModalOpen(true);
+  };
 
-  const handleConnectWallet = async () => {
+  const handleAuthSuccess = async (userInfo: any) => {
     setIsConnecting(true);
+    setConnectionStep('Processing authentication...');
     
     try {
-      // Simulate Web3 wallet connection process
-      setConnectionStep('Connecting to wallet...');
-      // console.log('Initiating Web3 wallet connection...');
+      // Process the authentication
+      login(userInfo);
       
-      // Step 1: Request wallet connection
-      await new Promise(resolve => setTimeout(resolve, 800));
-      setConnectionStep('Authenticating...');
-      // console.log('Wallet connection requested...');
-      
-      // Step 2: Authenticate user
-      await new Promise(resolve => setTimeout(resolve, 700));
-      setConnectionStep('Verifying signature...');
-      // console.log('User authentication in progress...');
-      
-      // Step 3: Verify signature
-      await new Promise(resolve => setTimeout(resolve, 500));
-      setConnectionStep('Finalizing...');
-      // console.log('Signature verified successfully');
-      
-      // Step 4: Connection successful
-      setIsConnected(true);
-      setConnectionStep('Connected! Redirecting...');
-      // console.log('Web3 wallet connected successfully');
+      setConnectionStep('Authentication successful! Redirecting...');
       
       // Navigate to dashboard after successful connection
       setTimeout(() => {
         router.push('/dashboard');
-      }, 500);
+        setIsConnecting(false);
+        setConnectionStep('');
+      }, 1500);
       
     } catch (error) {
-      console.error('Failed to connect wallet:', error);
-      setConnectionStep('Connection failed');
-    } finally {
+      console.error('Failed to process authentication:', error);
+      setConnectionStep('Authentication failed');
       setTimeout(() => {
         setIsConnecting(false);
         setConnectionStep('');
-      }, 1000);
+      }, 2000);
     }
   };
 
   const handleDisconnect = () => {
-    setIsConnected(false);
+    logout();
     console.log('Wallet disconnected');
   };
 
@@ -88,38 +72,36 @@ export default function ConnectWallet({
 
   // Variant styles
   const variantClasses = {
-    primary: disableHoverColorChange 
-      ? 'bg-green-500 text-white border-2 border-green-500'
-      : 'bg-green-500 text-white border-2 border-green-500 hover:bg-green-600 hover:border-green-600',
+    primary: disableHoverColorChange
+      ? 'bg-primary-green text-white border-2 border-primary-green font-inter font-semibold'
+      : 'bg-primary-green text-white border-2 border-primary-green hover:bg-primary-green-light hover:border-primary-green-light font-inter font-semibold',
     secondary: disableHoverColorChange
-      ? 'bg-white text-green-500 border-2 border-white'
-      : 'bg-white text-green-500 border-2 border-white hover:bg-gray-100',
+      ? 'bg-white text-primary-green border-2 border-white font-inter font-semibold'
+      : 'bg-white text-primary-green border-2 border-white hover:bg-gray-100 font-inter font-semibold',
     outline: disableHoverColorChange
-      ? 'bg-transparent text-green-400 border-2 border-green-400'
-      : 'bg-transparent text-green-400 border-2 border-green-400 hover:bg-green-400 hover:text-black'
-  };
-
-  const baseClasses = `
+      ? 'bg-transparent text-primary-green border-2 border-primary-green font-inter font-semibold'
+      : 'bg-transparent text-primary-green border-2 border-primary-green hover:bg-primary-green hover:text-white font-inter font-semibold'
+  };  const baseClasses = `
     font-semibold rounded-lg transition-all duration-300 transform hover:scale-105
     disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
     flex items-center justify-center gap-2
     ${disableFloatAnimation ? '' : 'animate-float'} shadow-lg hover:shadow-2xl
   `;
 
-  if (isConnected) {
+  if (isAuthenticated) {
     return (
       <button
         onClick={handleDisconnect}
-        className={`${baseClasses} ${sizeClasses[size]} bg-green-500 text-white border-2 border-green-500 hover:bg-green-600 ${className} shadow-2xl`}
+        className={`${baseClasses} ${sizeClasses[size]} bg-primary-green text-white border-2 border-primary-green hover:bg-primary-green-light font-inter font-semibold ${className} shadow-2xl`}
         style={{
-          boxShadow: '0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(34, 197, 94, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)',
+          boxShadow: '0 0 25px rgba(0, 212, 170, 0.5), 0 0 50px rgba(0, 212, 170, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)',
           transition: 'all 0.3s ease-in-out'
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = '0 0 35px rgba(34, 197, 94, 0.7), 0 0 70px rgba(34, 197, 94, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3)';
+          e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 212, 170, 0.7), 0 0 70px rgba(0, 212, 170, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = '0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(34, 197, 94, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)';
+          e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 212, 170, 0.5), 0 0 50px rgba(0, 212, 170, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)';
         }}
       >
         <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
@@ -129,44 +111,52 @@ export default function ConnectWallet({
   }
 
   return (
-    <button
-      onClick={handleConnectWallet}
-      disabled={isConnecting}
-      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className} shadow-2xl`}
-      style={{
-        boxShadow: '0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2)',
-        transition: 'all 0.3s ease-in-out'
-      }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 0 30px rgba(34, 197, 94, 0.6), 0 0 60px rgba(34, 197, 94, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3)';
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 0 20px rgba(34, 197, 94, 0.4), 0 0 40px rgba(34, 197, 94, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2)';
-      }}
-    >
-      {isConnecting ? (
-        <>
-          <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
-          {connectionStep || 'Connecting...'}
-        </>
-      ) : (
-        <>
-          <svg 
-            className="w-5 h-5 animate-pulse" 
-            fill="none" 
-            stroke="currentColor" 
-            viewBox="0 0 24 24"
-          >
-            <path 
-              strokeLinecap="round" 
-              strokeLinejoin="round" 
-              strokeWidth={2} 
-              d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" 
-            />
-          </svg>
-          Connect Wallet
-        </>
-      )}
-    </button>
+    <>
+      <button
+        onClick={handleConnectWallet}
+        disabled={isConnecting}
+        className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className} shadow-2xl`}
+        style={{
+          boxShadow: '0 0 20px rgba(0, 212, 170, 0.4), 0 0 40px rgba(0, 212, 170, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2)',
+          transition: 'all 0.3s ease-in-out'
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.boxShadow = '0 0 30px rgba(0, 212, 170, 0.6), 0 0 60px rgba(0, 212, 170, 0.3), 0 6px 20px rgba(0, 0, 0, 0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.boxShadow = '0 0 20px rgba(0, 212, 170, 0.4), 0 0 40px rgba(0, 212, 170, 0.2), 0 4px 15px rgba(0, 0, 0, 0.2)';
+        }}
+      >
+        {isConnecting ? (
+          <>
+            <div className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin"></div>
+            {connectionStep || 'Connecting...'}
+          </>
+        ) : (
+          <>
+            <svg 
+              className="w-5 h-5 animate-pulse" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" 
+              />
+            </svg>
+            Connect Wallet
+          </>
+        )}
+      </button>
+
+      <Web3AuthModal 
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSuccess={handleAuthSuccess}
+      />
+    </>
   );
 }
