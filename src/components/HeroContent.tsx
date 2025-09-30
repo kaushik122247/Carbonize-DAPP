@@ -4,39 +4,71 @@ import ConnectWallet from './ConnectWallet';
 
 export default function HeroContent() {
   return (
-    <div className="flex flex-col items-center lg:items-start justify-center h-full max-w-2xl">
+    <div className="absolute  inset-0 flex flex-col items-center justify-center z-20 px-4 py-8">
       {/* Main Title with Backdrop */}
-      <div className="text-center lg:text-left font-space relative">
-        {/* Transparent Black Backdrop */}
-        <div className="absolute inset-0 bg-black/35 backdrop-blur-sm rounded-3xl transform scale-105 z-0"></div>
+      <div className="relative text-center">
+        {/* Semi-transparent black backdrop */}
+        <div className="absolute h-[100vh] inset-0 bg-black/30 backdrop-blur-sm rounded-2xl -m-8 z-0"></div>
         
-        {/* Text Content */}
-        <div className="relative z-10 px-6 py-6 sm:px-8 sm:py-8 lg:px-12 lg:py-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 lg:mb-4 hero-text leading-tight">
+        {/* Text content */}
+        <div className="relative z-10">
+          <h1 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[8.5rem] font-bold text-white mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">Tokenize</span>
           </h1>
-          <div className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-gradient-primary mb-3 lg:mb-4 hero-text leading-tight">
+          <div 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[7rem] font-bold text-white-700 mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">Carbon Credits</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 lg:mb-6 hero-text leading-tight">
+          <h1 
+            className="text-6xl md:text-8xl lg:text-9xl xl:text-[6rem] font-bold text-white mb-6 transform hover:scale-105 transition-transform duration-300"
+            style={{ 
+              textShadow: `
+                0 0 10px rgba(255, 255, 255, 0.5),
+                0 0 20px rgba(255, 255, 255, 0.3),
+                0 4px 8px rgba(0, 0, 0, 0.8),
+                0 8px 16px rgba(0, 0, 0, 0.6),
+                0 12px 24px rgba(0, 0, 0, 0.4),
+                2px 2px 0px rgba(0, 0, 0, 1),
+                4px 4px 0px rgba(0, 0, 0, 0.8)
+              `
+            }}
+          >
             <span className="block">as NFTs</span>
           </h1>
-          
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-6 lg:mb-8 font-inter max-w-lg leading-relaxed">
-            Transform environmental impact into tradeable digital assets on the blockchain. Join the future of sustainable finance.
-          </p>
-          
-          {/* Connect Wallet Button */}
-          <div className="flex justify-center lg:justify-start">
-            <ConnectWallet 
-              size="large"
-              variant="outline"
-              className="w-fit"
-            />
-          </div>
         </div>
       </div>
+
+      {/* Connect Wallet Button Component */}
+      <ConnectWallet 
+        size="large"
+        variant="outline"
+        className="mt-12"
+      />
     </div>
   );
 }
