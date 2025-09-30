@@ -29,11 +29,11 @@ export const DashboardSidebar = () => {
           <Image
             src="/images/logo.png"
             alt="Carbonize Logo"
-            width={40}
-            height={40}
+            width={48}
+            height={48}
             className="rounded-lg"
           />
-          <span className="text-xl font-bold">Carbonize</span>
+          <span className="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">Carbonize</span>
         </div>
 
         <nav className="space-y-2">
