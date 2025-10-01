@@ -23,7 +23,7 @@ const Team = () => {
     {
       name: "Sushant",
       role: "Head of Sustainability",
-      image: "/images/team/michael.jpg",
+      image: "/images/team/sushant.jpg",
       linkedin: "https://www.linkedin.com/in/sushant-97a7a0290/",
       github: "https://github.com/Sushant1407",
       email: "sushantkumar20102@gmail.com"
