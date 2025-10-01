@@ -15,7 +15,7 @@ import {
 const navItems = [
   { name: 'Dashboard', href: '/dashboard', icon: HomeIcon },
   { name: 'Mint NFTs', href: '/dashboard/mint', icon: CurrencyDollarIcon },
-  { name: 'Buy/Sell NFTs', href: '/dashboard/trade', icon: ShoppingCartIcon },
+  { name: 'Sell NFTs', href: '/dashboard/trade', icon: ShoppingCartIcon },
   { name: 'My Credits', href: '/dashboard/credits', icon: CreditCardIcon },
   { name: 'Marketplace', href: '/dashboard/marketplace', icon: BuildingStorefrontIcon },
   { name: 'Retirement', href: '/dashboard/retirement', icon: ArrowPathIcon },
