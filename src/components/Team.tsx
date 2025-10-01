@@ -135,7 +135,9 @@ const Team = () => {
                   </a>
                   
                   <a 
-                    href={`mailto:${member.email}`} 
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=${member.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 bg-gray-700 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-300"
                     aria-label="Email"
                   >
