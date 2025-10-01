@@ -8,56 +8,34 @@ const Team = () => {
       name: "Pushpender Singh",
       role: "Co-Founder & CEO",
       image: "/images/team/alex.jpg",
-      bio: "Environmental scientist turned blockchain enthusiast. Leading the mission to make carbon credits accessible to everyone.",
-      linkedin: "#",
+
       github: "#",
       email: "pushpender_singh@outlook.in"
     },
     {
-      name: "Sushant",
+      name: "Kaushik Chaurasiya",
       role: "CTO & Co-Founder",
-      image: "/images/team/sarah.jpg",
-      bio: "Full-stack developer with 8+ years in DeFi. Expert in smart contract development and blockchain architecture.",
-      linkedin: "#",
-      github: "#",
-      email: "sushantkumar20102@gmail.com"
+      image: "/images/team/kaushik.jpg",
+      linkedin: "https://www.linkedin.com/in/kaushik-chaurasiya-704301288/",
+      github: "https://github.com/kaushik122247",
+      email: "kaushikchaurasiya47@gmail.com"
     },
     {
-      name: "Kaushik Chaurasiya",
+      name: "Sushant",
       role: "Head of Sustainability",
       image: "/images/team/michael.jpg",
-      bio: "Carbon market specialist with 10 years experience in environmental finance and climate policy.",
-      linkedin: "#",
-      github: "#",
-      email: "kaushikchaurasiya47@gmail.com"
+      linkedin: "https://www.linkedin.com/in/sushant-97a7a0290/",
+      github: "https://github.com/Sushant1407",
+      email: "sushantkumar20102@gmail.com"
     },
     {
       name: "Taranpreet Kaur",
       role: "Lead Designer",
-      image: "/images/team/emma.jpg",
-      bio: "UX/UI designer passionate about creating intuitive interfaces for complex blockchain applications.",
-      linkedin: "#",
+      image: "/images/team/taran.jpg",
+      linkedin: "https://www.linkedin.com/in/taranpreet-kaur-a5544328b/",
       github: "#",
-      email: "emma@carbonize.com"
+      email: "Taranpreetkaur206@gmail.com"
     },
-    {
-      name: "David Kumar",
-      role: "Blockchain Developer",
-      image: "/images/team/david.jpg",
-      bio: "Smart contract auditor and security expert. Ensuring the highest standards of security and reliability.",
-      linkedin: "#",
-      github: "#",
-      email: "david@carbonize.com"
-    },
-    {
-      name: "Lisa Martinez",
-      role: "Marketing Director",
-      image: "/images/team/lisa.jpg",
-      bio: "Growth marketing specialist with expertise in Web3 community building and digital strategy.",
-      linkedin: "#",
-      github: "#",
-      email: "lisa@carbonize.com"
-    }
   ];
 
   return (
@@ -97,8 +75,25 @@ const Team = () => {
               {/* Profile Image */}
               <div className="relative mb-6">
                 <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 p-1">
-                  <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center">
-                    <div className="w-24 h-24 rounded-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-white text-2xl font-bold">
+                  <div className="w-full h-full rounded-full bg-gray-800 flex items-center justify-center overflow-hidden relative">
+                    {/* Profile Image */}
+                    <img 
+                      src={member.image} 
+                      alt={member.name}
+                      className="w-full h-full rounded-full object-cover"
+                      onError={(e) => {
+                        // Hide image and show initials fallback on error
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                        const fallback = target.nextElementSibling as HTMLElement;
+                        if (fallback) fallback.style.display = 'flex';
+                      }}
+                    />
+                    {/* Fallback initials */}
+                    <div 
+                      className="w-full h-full rounded-full bg-gradient-to-br from-gray-600 to-gray-700 flex items-center justify-center text-white text-2xl font-bold absolute inset-0"
+                      style={{ display: 'none' }}
+                    >
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </div>
                   </div>
@@ -115,10 +110,6 @@ const Team = () => {
                 
                 <p className="text-green-400 font-semibold mb-4 text-lg">
                   {member.role}
-                </p>
-                
-                <p className="text-gray-300 text-sm leading-relaxed mb-6 group-hover:text-gray-200 transition-colors duration-300">
-                  {member.bio}
                 </p>
 
                 {/* Social Links */}
