@@ -108,6 +108,30 @@ body::-webkit-scrollbar {
   display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
 
+/* Custom scrollbar styles for wallet modal */
+.scrollbar-thin {
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #4b5563 #1f2937; /* Firefox: thumb track */
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 8px; /* WebKit browsers */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1f2937; /* Track color (gray-800) */
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #4b5563; /* Thumb color (gray-600) */
+  border-radius: 4px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #6b7280; /* Hover color (gray-500) */
+}
+
 canvas {
   display: block;
 }
