@@ -38,6 +38,7 @@ export default function ConnectWallet({
     try {
       // Process the authentication
       login(userInfo);
+      sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
       
       setConnectionStep('Authentication successful! Redirecting...');
       
