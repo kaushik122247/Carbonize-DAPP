@@ -1,6 +1,7 @@
 "use client";
 import React from 'react';
 import ConnectWallet from './ConnectWallet';
+import { AptosWalletAdapterProvider } from '@aptos-labs/wallet-adapter-react';
 
 export default function Header() {
   return (
@@ -8,46 +9,48 @@ export default function Header() {
       <nav className="flex items-center justify-center relative">
         {/* Logo */}
         <div className="absolute left-0 flex items-center space-x-2">
-            <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
-          <span className="text-white text-xl font-bold">Carbonize</span>
+          <img src="images/logo.png" alt="Logo" className="h-8 w-8" />
+          <span className="text-white text-xl font-bold font-space">Carbonize</span>
         </div>
 
         {/* Navigation Links - Centered */}
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+        <div className="hidden md:flex items-center space-x-8 font-inter">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Home
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             How It Works
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Featured
           </a>
-          <a href="#why-choose-us" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#why-choose-us" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Why Choose Us
           </a>
-           <a href="#team" className="text-white hover:text-green-400 transition-colors duration-300">
+          <a href="#team" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             Team
           </a>
-          <a href="#" className="text-white hover:text-green-400 transition-colors duration-0">
+          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-300 font-medium">
             About Us
           </a>
         </div>
 
         {/* Connect Wallet Button - Desktop */}
         <div className="absolute right-0 hidden md:block">
-          <ConnectWallet 
-            size="small"
-            variant="outline"
-            className="px-4 py-2 text-sm"
-            disableFloatAnimation={true}
-            disableHoverColorChange={true}
-          />
+          <AptosWalletAdapterProvider>
+            <ConnectWallet
+              size="small"
+              variant="outline"
+              className="px-4 py-2 text-sm"
+              disableFloatAnimation={true}
+              disableHoverColorChange={true}
+            />
+          </AptosWalletAdapterProvider>
         </div>
 
         {/* Mobile menu button and Connect Wallet */}
         <div className="absolute right-0 md:hidden flex items-center space-x-2">
-          <ConnectWallet 
+          <ConnectWallet
             size="small"
             variant="outline"
             className="px-3 py-1.5 text-xs"
