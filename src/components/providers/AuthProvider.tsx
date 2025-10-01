@@ -1,5 +1,6 @@
 "use client";
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import { setCookie, deleteCookie } from '@/lib/cookies';
 
 interface AuthContextType {
   user: any;
@@ -36,9 +37,13 @@ export function AuthProvider({ children }: AuthProviderProps) {
         const parsedUser = JSON.parse(savedUser);
         setUser(parsedUser);
         setIsAuthenticated(true);
+        
+        // Ensure cookie is set for middleware
+        setCookie('carbonize_auth', JSON.stringify({ isAuthenticated: true, user: parsedUser }), 7);
       } catch (error) {
         console.error('Error parsing saved user:', error);
         localStorage.removeItem('carbonize_user');
+        deleteCookie('carbonize_auth');
       }
     }
     setIsLoading(false);
@@ -48,12 +53,18 @@ export function AuthProvider({ children }: AuthProviderProps) {
     setUser(userInfo);
     setIsAuthenticated(true);
     localStorage.setItem('carbonize_user', JSON.stringify(userInfo));
+    
+    // Set cookie for middleware authentication check
+    setCookie('carbonize_auth', JSON.stringify({ isAuthenticated: true, user: userInfo }), 7);
   };
 
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
     localStorage.removeItem('carbonize_user');
+    
+    // Remove auth cookie
+    deleteCookie('carbonize_auth');
   };
 
   return (
