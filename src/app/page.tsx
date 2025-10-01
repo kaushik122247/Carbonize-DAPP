@@ -33,10 +33,12 @@ export default function Home() {
         {/* Earth Model in Center */}
         <div className='absolute inset-0 z-10 flex items-center justify-center'>
           <div className='w-96 h-96 md:w-[480px] md:h-[480px] lg:w-[520px] lg:h-[520px] relative'>
-            {/* Green shadow/glow effect */}
-            <div className="absolute inset-0 rounded-full bg-green-500/20 blur-3xl scale-110 animate-pulse"></div>
-            <div className="absolute inset-0 rounded-full bg-green-400/10 blur-2xl scale-125"></div>
-            <Earth className="w-full h-full relative z-10" />
+            {/* Green shadow/glow effect - reduced bloom */}
+            <div className="absolute inset-0 rounded-full bg-green-500/10 blur-xl scale-105 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-full bg-green-400/5 blur-lg scale-110"></div>
+            <div className="w-full h-full relative z-10" style={{ filter: 'blur(2.5px)' }}>
+              <Earth className="w-full h-full" />
+            </div>
           </div>
             <HeroContent />
         </div>
