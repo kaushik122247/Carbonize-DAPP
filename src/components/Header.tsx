@@ -15,22 +15,22 @@ export default function Header() {
 
         {/* Navigation Links - Centered */}
         <div className="hidden md:flex items-center space-x-8 font-inter">
-          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Home
           </a>
-          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             How It Works
           </a>
-          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Featured
           </a>
-          <a href="#why-choose-us" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#why-choose-us" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Why Choose Us
           </a>
-          <a href="#team" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#team" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Team
           </a>
-          <a href="#" className="text-neutral-200 hover:text-primary-green transition-colors duration-0 font-medium">
+          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             About Us
           </a>
         </div>
