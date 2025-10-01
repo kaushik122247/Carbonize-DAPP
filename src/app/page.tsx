@@ -38,6 +38,7 @@ export default function Home() {
             <div className="absolute inset-0 rounded-full bg-green-400/10 blur-2xl scale-125"></div>
             <Earth className="w-full h-full relative z-10" />
           </div>
+            <HeroContent />
         </div>
       </div>
 
