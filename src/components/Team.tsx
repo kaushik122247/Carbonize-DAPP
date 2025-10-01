@@ -5,34 +5,34 @@ import ParticleBackground from './ParticleBackground';
 const Team = () => {
   const teamMembers = [
     {
-      name: "Alex Chen",
+      name: "Pushpender Singh",
       role: "Co-Founder & CEO",
       image: "/images/team/alex.jpg",
       bio: "Environmental scientist turned blockchain enthusiast. Leading the mission to make carbon credits accessible to everyone.",
       linkedin: "#",
       github: "#",
-      email: "alex@carbonize.com"
+      email: "pushpender_singh@outlook.in"
     },
     {
-      name: "Sarah Johnson",
+      name: "Sushant",
       role: "CTO & Co-Founder",
       image: "/images/team/sarah.jpg",
       bio: "Full-stack developer with 8+ years in DeFi. Expert in smart contract development and blockchain architecture.",
       linkedin: "#",
       github: "#",
-      email: "sarah@carbonize.com"
+      email: "sushantkumar20102@gmail.com"
     },
     {
-      name: "Michael Rodriguez",
+      name: "Kaushik Chaurasiya",
       role: "Head of Sustainability",
       image: "/images/team/michael.jpg",
       bio: "Carbon market specialist with 10 years experience in environmental finance and climate policy.",
       linkedin: "#",
       github: "#",
-      email: "michael@carbonize.com"
+      email: "kaushikchaurasiya47@gmail.com"
     },
     {
-      name: "Emma Thompson",
+      name: "Taranpreet Kaur",
       role: "Lead Designer",
       image: "/images/team/emma.jpg",
       bio: "UX/UI designer passionate about creating intuitive interfaces for complex blockchain applications.",
