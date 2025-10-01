@@ -9,7 +9,7 @@ import Team from '@/components/Team';
 export default function Home() {
   return (
     <>
-      <div className='relative min-h-screen h-screen w-screen overflow-hidden'>
+      <div className='relative min-h-screen h-screen w-screen overflow-hidden bg-black'>
 
         {/* Header */}
         <Header />
