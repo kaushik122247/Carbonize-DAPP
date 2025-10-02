@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import { useAuth } from '../providers/AuthProvider';
 
 interface UserWalletProps {
   walletAddress: string;
@@ -20,6 +21,13 @@ export const UserWallet: React.FC<UserWalletProps> = ({
   profileImageUrl = "/images/default-avatar.png" // Fallback image
 }) => {
   const truncatedAddress = truncateAddress(walletAddress);
+
+  const { logout } = useAuth();
+  
+  function handleLogout() {
+    logout();
+    window.location.href = "/";
+  }
 
   return (
     <DropdownMenu.Root>
@@ -56,7 +64,7 @@ export const UserWallet: React.FC<UserWalletProps> = ({
             </button>
           </DropdownMenu.Item>
           <DropdownMenu.Item className="outline-none">
-            <button className="w-full text-left px-3 py-2 text-sm text-gray-300 rounded hover:bg-gray-700 transition-colors">
+            <button onClick={handleLogout} className="w-full text-left px-3 py-2 text-sm text-gray-300 rounded hover:bg-gray-700 transition-colors">
               Disconnect
             </button>
           </DropdownMenu.Item>
