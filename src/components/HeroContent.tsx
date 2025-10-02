@@ -67,7 +67,7 @@ export default function HeroContent() {
       <ConnectWallet 
         size="large"
         variant="outline"
-        className="mt-10"
+        className="mt-15"
       />
     </div>
   );

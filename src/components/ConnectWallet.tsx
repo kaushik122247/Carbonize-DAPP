@@ -93,16 +93,22 @@ export default function ConnectWallet({
     return (
       <button
         onClick={handleDisconnect}
-        className={`${baseClasses} ${sizeClasses[size]} bg-primary-green text-white border-2 border-primary-green hover:bg-primary-green-light font-inter font-semibold ${className} shadow-2xl`}
+        className={`${baseClasses} ${sizeClasses[size]} text-white border-2 font-inter font-semibold ${className} shadow-2xl`}
         style={{
-          boxShadow: '0 0 25px rgba(0, 212, 170, 0.5), 0 0 50px rgba(0, 212, 170, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)',
+          backgroundColor: '#22c55e',
+          borderColor: '#22c55e',
+          boxShadow: '0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(34, 197, 94, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)',
           transition: 'all 0.3s ease-in-out'
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = '0 0 35px rgba(0, 212, 170, 0.7), 0 0 70px rgba(0, 212, 170, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3)';
+          e.currentTarget.style.backgroundColor = '#16a34a';
+          e.currentTarget.style.borderColor = '#16a34a';
+          e.currentTarget.style.boxShadow = '0 0 35px rgba(22, 163, 74, 0.7), 0 0 70px rgba(22, 163, 74, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3)';
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = '0 0 25px rgba(0, 212, 170, 0.5), 0 0 50px rgba(0, 212, 170, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)';
+          e.currentTarget.style.backgroundColor = '#22c55e';
+          e.currentTarget.style.borderColor = '#22c55e';
+          e.currentTarget.style.boxShadow = '0 0 25px rgba(34, 197, 94, 0.5), 0 0 50px rgba(34, 197, 94, 0.3), 0 4px 15px rgba(0, 0, 0, 0.2)';
         }}
       >
         <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>

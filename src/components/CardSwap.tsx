@@ -20,6 +20,7 @@ export interface CardSwapProps {
   delay?: number;
   pauseOnHover?: boolean;
   onCardClick?: (idx: number) => void;
+  onCardChange?: (idx: number) => void;
   skewAmount?: number;
   easing?: 'linear' | 'elastic';
   children: ReactNode;
@@ -67,13 +68,14 @@ const placeNow = (el: HTMLElement, slot: Slot, skew: number) =>
   });
 
 const CardSwap: React.FC<CardSwapProps> = ({
-  width = 500,
+  width = 400,
   height = 400,
   cardDistance = 60,
   verticalDistance = 70,
   delay = 5000,
   pauseOnHover = false,
   onCardClick,
+  onCardChange,
   skewAmount = 6,
   easing = 'elastic',
   children
@@ -109,6 +111,9 @@ const CardSwap: React.FC<CardSwapProps> = ({
   useEffect(() => {
     const total = refs.length;
     refs.forEach((r, i) => placeNow(r.current!, makeSlot(i, cardDistance, verticalDistance, total), skewAmount));
+    
+    // Set initial front card
+    onCardChange?.(0);
 
     const swap = () => {
       if (order.current.length < 2) return;
@@ -161,6 +166,8 @@ const CardSwap: React.FC<CardSwapProps> = ({
 
       tl.call(() => {
         order.current = [...rest, front];
+        // Notify about the new front card
+        onCardChange?.(rest[0]);
       });
     };
 
