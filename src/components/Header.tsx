@@ -18,7 +18,7 @@ export default function Header() {
           <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Home
           </a>
-          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
+          <a href="#how-it-works" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             How It Works
           </a>
           <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
@@ -29,9 +29,6 @@ export default function Header() {
           </a>
           <a href="#team" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Team
-          </a>
-          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
-            About Us
           </a>
         </div>
 

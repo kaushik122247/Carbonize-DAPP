@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import HeroContent from '@/components/HeroContent';
 import Earth from '@/components/Earth';
 import WhyChooseUs from '@/components/WhyChooseUs';
+import HowItWorks from '@/components/HowItWorks';
 import Team from '@/components/Team';
 import Footer from '@/components/Footer';
 
@@ -45,8 +46,14 @@ export default function Home() {
         </div>
       </div>
 
+
+      {/* How It Works Section */}
+      <HowItWorks />
+
       {/* Why Choose Us Section */}
       <WhyChooseUs />
+      
+      
       
       {/* Team Section */}
       <Team />
