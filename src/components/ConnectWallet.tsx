@@ -14,8 +14,8 @@ interface ConnectWalletProps {
   hideIcon?: boolean;
 }
 
-export default function ConnectWallet({ 
-  className = '', 
+export default function ConnectWallet({
+  className = '',
   size = 'large',
   variant = 'outline',
   disableFloatAnimation = false,
@@ -28,6 +28,7 @@ export default function ConnectWallet({
   const [connectionStep, setConnectionStep] = useState('');
   const router = useRouter();
   const { isAuthenticated, user, login, logout } = useAuth();
+  // 
 
   // Wallet adapter related code removed for simplicity
 
@@ -38,21 +39,21 @@ export default function ConnectWallet({
   const handleAuthSuccess = async (userInfo: any) => {
     setIsConnecting(true);
     setConnectionStep('Processing authentication...');
-    
+
     try {
       // Process the authentication
       login(userInfo);
       sessionStorage.setItem('userInfo', JSON.stringify(userInfo));
-      
+
       setConnectionStep('Authentication successful! Redirecting...');
-      
+
       // Navigate to dashboard after successful connection
       setTimeout(() => {
         router.push('/dashboard');
         setIsConnecting(false);
         setConnectionStep('');
-      }, 1500);
-      
+      }, 250);
+
     } catch (error) {
       console.error('Failed to process authentication:', error);
       setConnectionStep('Authentication failed');
@@ -63,9 +64,13 @@ export default function ConnectWallet({
     }
   };
 
-  const handleDisconnect = () => {
-    logout();
-    console.log('Wallet disconnected');
+  const handleRedirect = () => {
+    // Navigate to dashboard after successful connection
+    setTimeout(() => {
+      router.push('/dashboard');
+      setIsConnecting(false);
+      setConnectionStep('');
+    }, 250);
   };
 
   // Size variations
@@ -86,7 +91,7 @@ export default function ConnectWallet({
     outline: disableHoverColorChange
       ? 'bg-transparent text-primary-green border-2 border-primary-green font-inter font-semibold'
       : 'bg-transparent text-primary-green border-2 border-primary-green hover:bg-primary-green hover:text-white font-inter font-semibold'
-  };  const baseClasses = `
+  }; const baseClasses = `
     font-semibold rounded-lg transition-all duration-300 transform hover:scale-105
     disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
     flex items-center justify-center gap-2 group
@@ -96,7 +101,7 @@ export default function ConnectWallet({
   if (isAuthenticated) {
     return (
       <button
-        onClick={handleDisconnect}
+        onClick={handleRedirect}
         className={`${baseClasses} ${sizeClasses[size]} text-white border-2 font-inter font-semibold ${className} shadow-2xl`}
         style={{
           backgroundColor: '#22c55e',
@@ -180,7 +185,7 @@ export default function ConnectWallet({
         )}
       </button>
 
-      <Web3AuthModal 
+      <Web3AuthModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         onSuccess={handleAuthSuccess}
