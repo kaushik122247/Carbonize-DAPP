@@ -10,6 +10,8 @@ interface ConnectWalletProps {
   variant?: 'primary' | 'secondary' | 'outline';
   disableFloatAnimation?: boolean;
   disableHoverColorChange?: boolean;
+  buttonText?: string;
+  hideIcon?: boolean;
 }
 
 export default function ConnectWallet({ 
@@ -17,7 +19,9 @@ export default function ConnectWallet({
   size = 'large',
   variant = 'outline',
   disableFloatAnimation = false,
-  disableHoverColorChange = false
+  disableHoverColorChange = false,
+  buttonText = 'Connect Wallet',
+  hideIcon = false
 }: ConnectWalletProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
@@ -85,7 +89,7 @@ export default function ConnectWallet({
   };  const baseClasses = `
     font-semibold rounded-lg transition-all duration-300 transform hover:scale-105
     disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
-    flex items-center justify-center gap-2
+    flex items-center justify-center gap-2 group
     ${disableFloatAnimation ? '' : 'animate-float'} shadow-lg hover:shadow-2xl
   `;
 
@@ -141,20 +145,37 @@ export default function ConnectWallet({
           </>
         ) : (
           <>
-            <svg 
-              className="w-5 h-5 animate-pulse" 
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-              <path 
-                strokeLinecap="round" 
-                strokeLinejoin="round" 
-                strokeWidth={2} 
-                d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" 
-              />
-            </svg>
-            Connect Wallet
+            {!hideIcon && (
+              <svg 
+                className="w-5 h-5 animate-pulse" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" 
+                />
+              </svg>
+            )}
+            {buttonText}
+            {hideIcon && (
+              <svg 
+                className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" 
+                fill="none" 
+                stroke="currentColor" 
+                viewBox="0 0 24 24"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth={2} 
+                  d="M17 8l4 4m0 0l-4 4m4-4H3" 
+                />
+              </svg>
+            )}
           </>
         )}
       </button>

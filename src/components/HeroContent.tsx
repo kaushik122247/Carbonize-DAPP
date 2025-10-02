@@ -68,6 +68,8 @@ export default function HeroContent() {
         size="large"
         variant="outline"
         className="mt-15"
+        buttonText="Get Started"
+        hideIcon={true}
       />
     </div>
   );

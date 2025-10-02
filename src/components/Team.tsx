@@ -5,13 +5,6 @@ import ParticleBackground from './ParticleBackground';
 const Team = () => {
   const teamMembers = [
     {
-      name: "Pushpender Singh",
-      role: "Head of Sustainability",
-      image: "",
-      linkedin: "https://www.linkedin.com/in/pushpender-singh-25b058288/",
-      github: "https://github.com/Pushpender-18",
-      email: "pushpender_singh@outlook.in"
-    },{
       name: "Kaushik Chaurasiya",
       role: "Co-Founder & CEO",
       image: "/images/team/kaushik.jpg",
@@ -34,6 +27,13 @@ const Team = () => {
       linkedin: "https://www.linkedin.com/in/taranpreet-kaur-a5544328b/",
       github: "#",
       email: "Taranpreetkaur206@gmail.com"
+    },{
+      name: "Pushpender Singh",
+      role: "Head of Sustainability",
+      image: "",
+      linkedin: "https://www.linkedin.com/in/pushpender-singh-25b058288/",
+      github: "https://github.com/Pushpender-18",
+      email: "pushpender_singh@outlook.in"
     },
     
   ];

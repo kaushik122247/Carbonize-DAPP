@@ -21,9 +21,6 @@ export default function Header() {
           <a href="#how-it-works" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             How It Works
           </a>
-          <a href="#" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
-            Featured
-          </a>
           <a href="#why-choose-us" className="text-neutral-200 hover:text-green-400 transition-colors duration-0 font-medium">
             Why Choose Us
           </a>
