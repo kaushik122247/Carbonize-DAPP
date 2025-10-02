@@ -5,6 +5,7 @@ import HeroContent from '@/components/HeroContent';
 import Earth from '@/components/Earth';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Team from '@/components/Team';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -49,6 +50,9 @@ export default function Home() {
       
       {/* Team Section */}
       <Team />
+      
+      {/* Footer */}
+      <Footer />
     </>
   );
 }
