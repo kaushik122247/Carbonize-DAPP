@@ -60,6 +60,114 @@ const carbonCredits = [
     vintage: "2023",
     certification: "Gold Standard",
     icon: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 7,
+    name: "Hydroelectric Power Plant (Norway)",
+    volume: "4,500 tCO2e",
+    price: "2.1 APT/Credit",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 8,
+    name: "Biogas Production Facility (India)",
+    volume: "1,350 tCO2e",
+    price: "2.9 APT/Credit",
+    vintage: "2023",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 9,
+    name: "Mangrove Restoration (Philippines)",
+    volume: "1,750 tCO2e",
+    price: "3.5 APT/Credit",
+    vintage: "2024",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1571023744093-8c76eddddbec?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 10,
+    name: "Geothermal Energy (Iceland)",
+    volume: "3,800 tCO2e",
+    price: "2.4 APT/Credit",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 11,
+    name: "Peatland Restoration (Scotland)",
+    volume: "920 tCO2e",
+    price: "4.2 APT/Credit",
+    vintage: "2023",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 12,
+    name: "Waste-to-Energy Plant (Germany)",
+    volume: "2,650 tCO2e",
+    price: "2.7 APT/Credit",
+    vintage: "2023",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 13,
+    name: "Afforestation Project (Kenya)",
+    volume: "1,480 tCO2e",
+    price: "3.1 APT/Credit",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1547036967-23d11aacaee0?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 14,
+    name: "Tidal Energy Generation (UK)",
+    volume: "2,300 tCO2e",
+    price: "3.8 APT/Credit",
+    vintage: "2024",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 15,
+    name: "Methane Capture (Landfill, Brazil)",
+    volume: "1,120 tCO2e",
+    price: "2.5 APT/Credit",
+    vintage: "2023",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 16,
+    name: "Bamboo Plantation (Vietnam)",
+    volume: "1,890 tCO2e",
+    price: "2.8 APT/Credit",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 17,
+    name: "Energy Efficiency (Buildings, Japan)",
+    volume: "3,400 tCO2e",
+    price: "2.0 APT/Credit",
+    vintage: "2023",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: 18,
+    name: "Savanna Conservation (Australia)",
+    volume: "2,750 tCO2e",
+    price: "3.4 APT/Credit",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=100&fit=crop&crop=center"
   }
 ];
 
