@@ -8,14 +8,14 @@ const nftCollection = [
     id: 1,
     title: "Rie Maynil",
     description: "Carbon Credits",
-    value: "9 B ps",
+    value: "9 APT",
     image: "/images/nft-placeholder-1.png"
   },
   {
     id: 2,
     title: "Tirlie Mase",
     description: "Carbon Credits",
-    value: "12 B ps",
+    value: "12 APT",
     image: "/images/nft-placeholder-2.png"
   },
   // Add more NFTs as needed
