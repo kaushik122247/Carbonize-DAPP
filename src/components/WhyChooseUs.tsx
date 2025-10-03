@@ -63,78 +63,78 @@ const WhyChooseUs = () => {
                 skewAmount={1.5}
                 onCardChange={setCurrentCardIndex}
               >
-                <Card>
-                  <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
-                    {/* Carbon Background Image - Properly fitted inside card */}
-                    <div
-                      className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-green-400/60 shadow-lg shadow-green-400/20"
-                      style={{
-                        backgroundImage: "url('/images/carbon.png')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    >
-                      {/* Dark overlay for text readability */}
-                      <div className="absolute inset-0 bg-black/70 rounded-2xl"></div>
-                      {/* Green overlay for carbon theme */}
-                      <div className="absolute inset-0 bg-green-900/50 rounded-2xl"></div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 p-4">
-                      <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Carbon Credits</h3>
-                      <p className="text-lg opacity-90 drop-shadow-lg">Trade verified environmental tokens</p>
-                    </div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
-                    {/* Blockchain Background Image - Properly fitted inside card */}
-                    <div
-                      className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-cyan-400/60 shadow-lg shadow-cyan-400/20"
-                      style={{
-                        backgroundImage: "url('/images/blockchain.jpg')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    >
-                      {/* Dark overlay for text readability */}
-                      <div className="absolute inset-0 bg-black/70 rounded-2xl"></div>
-                      {/* Blue overlay for blockchain theme */}
-                      <div className="absolute inset-0 bg-blue-900/50 rounded-2xl"></div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 p-4">
-                      <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Blockchain Security</h3>
-                      <p className="text-lg opacity-90 drop-shadow-lg">Secure transparent transactions</p>
-                    </div>
-                  </div>
-                </Card>
-                <Card>
-                  <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
-                    {/* Sustainability Background Image - Properly fitted inside card */}
-                    <div
-                      className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-emerald-400/60 shadow-lg shadow-emerald-400/20"
-                      style={{
-                        backgroundImage: "url('/images/sustainibility.png')",
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center'
-                      }}
-                    >
-                      {/* Blueish green and pink gradient backdrop */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-teal-600/60 via-cyan-700/50 to-pink-600/50 rounded-2xl"></div>
-                      {/* Dark overlay for text readability */}
-                      <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
-                    </div>
-
-                    {/* Content */}
-                    <div className="relative z-10 p-4">
-                      <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Sustainability</h3>
-                      <p className="text-lg opacity-90 drop-shadow-lg">Make positive environmental impact</p>
-                    </div>
-                  </div>
-                </Card>
+            <Card>
+              <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                {/* Carbon Background Image - Properly fitted inside card */}
+                <div 
+                  className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-green-400/60 shadow-lg shadow-green-400/20"
+                  style={{
+                    backgroundImage: "url('/images/carbon.png')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  {/* Dark overlay for text readability */}
+                  <div className="absolute inset-0 bg-black/70 rounded-2xl"></div>
+                  {/* Green overlay for carbon theme */}
+                  <div className="absolute inset-0 bg-green-900/50 rounded-2xl"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 p-4">
+                  <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Carbon Credits</h3>
+                  <p className="text-lg opacity-90 drop-shadow-lg">Trade verified environmental tokens</p>
+                </div>
+              </div>
+            </Card>
+            <Card>
+              <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                {/* Blockchain Background Image - Properly fitted inside card */}
+                <div 
+                  className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-cyan-400/60 shadow-lg shadow-cyan-400/20"
+                  style={{
+                    backgroundImage: "url('/images/blockchain.jpg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  {/* Dark overlay for text readability */}
+                  <div className="absolute inset-0 bg-black/70 rounded-2xl"></div>
+                  {/* Blue overlay for blockchain theme */}
+                  <div className="absolute inset-0 bg-blue-900/50 rounded-2xl"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 p-4">
+                  <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Blockchain Security</h3>
+                  <p className="text-lg opacity-90 drop-shadow-lg">Secure transparent transactions</p>
+                </div>
+              </div>
+            </Card>
+            <Card>
+              <div className="p-4 text-white h-full flex flex-col justify-center items-center text-center relative overflow-hidden">
+                {/* Sustainability Background Image - Properly fitted inside card */}
+                <div 
+                  className="absolute inset-4 bg-cover bg-center bg-no-repeat rounded-2xl border-2 border-emerald-400/60 shadow-lg shadow-emerald-400/20"
+                  style={{
+                    backgroundImage: "url('/images/sustainibility.jpg')",
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                  }}
+                >
+                  {/* Blueish green and pink gradient backdrop */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-600/60 via-cyan-700/50 to-pink-600/50 rounded-2xl"></div>
+                  {/* Dark overlay for text readability */}
+                  <div className="absolute inset-0 bg-black/40 rounded-2xl"></div>
+                </div>
+                
+                {/* Content */}
+                <div className="relative z-10 p-4">
+                  <h3 className="text-8xl font-bold mb-4 drop-shadow-1md text-shadow-lg">Sustainability</h3>
+                  <p className="text-lg opacity-90 drop-shadow-lg">Make positive environmental impact</p>
+                </div>
+              </div>
+            </Card>
               </CardSwap>
             </div>
           </div>

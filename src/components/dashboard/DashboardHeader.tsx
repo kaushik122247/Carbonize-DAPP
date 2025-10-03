@@ -1,6 +1,6 @@
 "use client";
 
-import React, { use } from 'react';
+import React, { useState, useEffect } from 'react';
 import { UserWallet } from './UserWallet';
 import { useWallet } from '@aptos-labs/wallet-adapter-react';
 
@@ -8,14 +8,23 @@ import { useWallet } from '@aptos-labs/wallet-adapter-react';
 const MOCK_WALLET_ADDRESS = "0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045";
 
 function fetchWalletAddress() {
-  const userInfo = sessionStorage.getItem('userInfo');
-  const address = userInfo ? JSON.parse(userInfo).address : null;
-  
-  return address;
- }
+  // Check if we're in the browser before accessing sessionStorage
+  if (typeof window !== 'undefined') {
+    const userInfo = sessionStorage.getItem('userInfo');
+    const address = userInfo ? JSON.parse(userInfo).address : null;
+    return address;
+  }
+  return null;
+}
 
 export const DashboardHeader = () => {
-  const WALLET_ADDRESS = fetchWalletAddress();
+  const [walletAddress, setWalletAddress] = useState<string | null>(null);
+
+  useEffect(() => {
+    // Only run on client side
+    const address = fetchWalletAddress();
+    setWalletAddress(address);
+  }, []);
 
   return (
     <div className="flex justify-between items-center mb-8">
@@ -23,7 +32,7 @@ export const DashboardHeader = () => {
         Dashboard
       </h1>
       <UserWallet 
-        walletAddress={WALLET_ADDRESS}
+        walletAddress={walletAddress || MOCK_WALLET_ADDRESS}
         profileImageUrl="/images/default-avatar.png"
       />
     </div>
