@@ -6,7 +6,6 @@ const Team = () => {
   const teamMembers = [
     {
       name: "Kaushik Chaurasiya",
-      role: "Co-Founder & CEO",
       image: "/images/team/kaushik.jpg",
       linkedin: "https://www.linkedin.com/in/kaushik-chaurasiya-704301288/",
       github: "https://github.com/kaushik122247",
@@ -14,7 +13,6 @@ const Team = () => {
     },
     {
       name: "Sushant",
-      role: "CTO & Co-Founder",
       image: "/images/team/sushant.jpg",
       linkedin: "https://www.linkedin.com/in/sushant-97a7a0290/",
       github: "https://github.com/Sushant1407",
@@ -22,14 +20,12 @@ const Team = () => {
     },
     {
       name: "Taranpreet Kaur",
-      role: "Lead Designer",
       image: "/images/team/taran.jpg",
       linkedin: "https://www.linkedin.com/in/taranpreet-kaur-a5544328b/",
       github: "#",
       email: "Taranpreetkaur206@gmail.com"
     },{
       name: "Pushpender Singh",
-      role: "Head of Sustainability",
       image: "",
       linkedin: "https://www.linkedin.com/in/pushpender-singh-25b058288/",
       github: "https://github.com/Pushpender-18",
@@ -98,10 +94,6 @@ const Team = () => {
                 <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors duration-0">
                   {member.name}
                 </h3>
-
-                <p className="text-green-400 font-semibold text-lg">
-                  {member.role}
-                </p>
               </div>
 
               {/* Social Links - Fixed at bottom */}
