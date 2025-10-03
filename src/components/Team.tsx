@@ -22,11 +22,11 @@ const Team = () => {
       name: "Taranpreet Kaur",
       image: "/images/team/taran.jpg",
       linkedin: "https://www.linkedin.com/in/taranpreet-kaur-a5544328b/",
-      github: "#",
+      github: "https://github.com/Taran206",
       email: "Taranpreetkaur206@gmail.com"
     },{
       name: "Pushpender Singh",
-      image: "",
+      image: "/images/team/pushpender.jpg",
       linkedin: "https://www.linkedin.com/in/pushpender-singh-25b058288/",
       github: "https://github.com/Pushpender-18",
       email: "pushpender_singh@outlook.in"
