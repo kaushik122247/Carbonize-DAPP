@@ -11,6 +11,11 @@ export default function MintNFTPage() {
   const [formData, setFormData] = useState({
     name: "",
     description: "",
+    vintage: "",
+    volume: "",
+    priceAPT: "",
+    category: "",
+    certification: "",
   });
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -22,7 +27,7 @@ export default function MintNFTPage() {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -91,6 +96,100 @@ export default function MintNFTPage() {
                 placeholder="Enter NFT description"
                 required
               />
+            </div>
+
+            {/* Category Field */}
+            <div className="space-y-2">
+              <label className="block text-white text-lg">Category</label>
+              <select
+                name="category"
+                value={formData.category}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-[#0C1015] border border-gray-800 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                required
+              >
+                <option value="">Select Category</option>
+                <option value="Renewable Energy">Renewable Energy</option>
+                <option value="Forestry">Forestry</option>
+                <option value="Agriculture">Agriculture</option>
+                <option value="Industrial">Industrial</option>
+                <option value="Ocean Conservation">Ocean Conservation</option>
+                <option value="Direct Air Capture">Direct Air Capture</option>
+              </select>
+            </div>
+
+            {/* Volume Field */}
+            <div className="space-y-2">
+              <label className="block text-white text-lg">Volume (tCO2e)</label>
+              <input
+                type="text"
+                name="volume"
+                value={formData.volume}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-[#0C1015] border border-gray-800 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                placeholder="e.g., 1,250"
+                required
+              />
+              <p className="text-gray-400 text-sm">Enter the carbon offset volume in tons of CO2 equivalent</p>
+            </div>
+
+            {/* Vintage Field */}
+            <div className="space-y-2">
+              <label className="block text-white text-lg">Vintage Year</label>
+              <select
+                name="vintage"
+                value={formData.vintage}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-[#0C1015] border border-gray-800 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                required
+              >
+                <option value="">Select Year</option>
+                <option value="2024">2024</option>
+                <option value="2023">2023</option>
+                <option value="2022">2022</option>
+                <option value="2021">2021</option>
+                <option value="2020">2020</option>
+              </select>
+              <p className="text-gray-400 text-sm">Year when the carbon credits were generated</p>
+            </div>
+
+            {/* Price in APT Field */}
+            <div className="space-y-2">
+              <label className="block text-white text-lg">Price (APT)</label>
+              <input
+                type="number"
+                step="0.1"
+                name="priceAPT"
+                value={formData.priceAPT}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-[#0C1015] border border-gray-800 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                placeholder="e.g., 2.5"
+                required
+              />
+              <p className="text-gray-400 text-sm">Set the price per credit in APT tokens</p>
+            </div>
+
+            {/* Certification Field */}
+            <div className="space-y-2">
+              <label className="block text-white text-lg">Certification</label>
+              <select
+                name="certification"
+                value={formData.certification}
+                onChange={handleInputChange}
+                className="w-full px-4 py-3 bg-[#0C1015] border border-gray-800 rounded-lg text-white focus:outline-none focus:border-green-500 transition-colors"
+                required
+              >
+                <option value="">Select Certification</option>
+                <option value="Gold Standard">Gold Standard</option>
+                <option value="Verra Verified">Verra Verified</option>
+                <option value="Climate Action Reserve">Climate Action Reserve</option>
+                <option value="American Carbon Registry">American Carbon Registry</option>
+                <option value="Plan Vivo">Plan Vivo</option>
+                <option value="CDM (Clean Development Mechanism)">CDM (Clean Development Mechanism)</option>
+                <option value="JI (Joint Implementation)">JI (Joint Implementation)</option>
+                <option value="Other">Other</option>
+              </select>
+              <p className="text-gray-400 text-sm">Select the certification standard for your carbon credits</p>
             </div>
 
             {/* Upload Image Section */}

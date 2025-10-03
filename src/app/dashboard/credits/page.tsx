@@ -20,21 +20,42 @@ const nftData: NFTType[] = [
     name: "Andes Mountain Reforestation Project",
     vintage: "2023",
     certification: "Verra Verified",
-    icon: "/images/tree-icon.png"
+    icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=100&h=100&fit=crop&crop=center"
   },
   {
     id: "2",
     name: "Offshore Wind Farm",
     vintage: "2022",
     certification: "Verra Verified",
-    icon: "/images/wind-icon.png"
+    icon: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=100&h=100&fit=crop&crop=center"
   },
   {
     id: "3",
-    name: "Direct Farm Expansion (Texas)",
+    name: "Sustainable Agriculture Project (Texas)",
     vintage: "2023",
     certification: "Verra Verified",
-    icon: "/images/farm-icon.png"
+    icon: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: "4",
+    name: "Solar Energy Initiative (Arizona)",
+    vintage: "2024",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: "5",
+    name: "Ocean Blue Carbon Project",
+    vintage: "2023",
+    certification: "Verra Verified",
+    icon: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=100&h=100&fit=crop&crop=center"
+  },
+  {
+    id: "6",
+    name: "Alpine Forest Conservation",
+    vintage: "2022",
+    certification: "Gold Standard",
+    icon: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=100&h=100&fit=crop&crop=center"
   }
 ];
 

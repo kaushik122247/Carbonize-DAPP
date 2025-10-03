@@ -9,7 +9,7 @@ export const QuickActions = () => {
   const actions = [
     { 
       title: "Buy Carbon Credits", 
-      onClick: () => router.push('/dashboard/trade'),
+      onClick: () => router.push('/dashboard/marketplace'),
       bgColor: 'bg-green-600',
       hoverColor: 'hover:bg-green-700'
     },

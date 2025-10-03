@@ -101,22 +101,6 @@ export default function CreateCollectionPage() {
           </div>
         </div>
 
-        {/* Wallet Connection Warning */}
-        {!isWalletConnected && (
-          <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4 mb-8">
-            <div className="flex items-center text-orange-400">
-              <span className="mr-2">⚠️</span>
-              <div>
-                <p className="font-medium">No account connected</p>
-                <p className="text-sm mt-1">
-                  To continue with creating your collection, make sure you are connected with a Wallet and with the same profile
-                  account as in your COLLECTION_CREATOR_ADDRESS in .env file
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
-
         <form onSubmit={handleSubmit} className="max-w-2xl space-y-6">
           {/* File Upload Section */}
           <div className="space-y-2">
