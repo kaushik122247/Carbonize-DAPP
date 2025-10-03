@@ -10,93 +10,27 @@ const carbonCredits = [
   {
     id: 1,
     name: "Amazon Reforestation Project",
-    volume: "1,500 tCO2e",
-    price: "100 APT",
     volume: "1,000 tCO2e",
     price: "2.8 APT/Credit",
     vintage: "2023",
     certification: "Gold Standard",
-    icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop&crop=center"
     icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=100&h=100&fit=crop&crop=center"
   },
   {
     id: 2,
-    name: "Wind Farm Expansion (Texas)",
-    volume: "2,200 tCO2e",
-    price: "150 APT",
     name: "Wind Farm Expansion (Texas / Iceland)",
     volume: "2,500 tCO2e",
     price: "2.3 APT/Credit",
     vintage: "2024",
     certification: "Gold Standard",
-    icon: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=400&fit=crop&crop=center"
     icon: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=100&h=100&fit=crop&crop=center"
   },
   {
     id: 3,
-    name: "Direct Air Capture Facility (Iceland)",
-    volume: "800 tCO2e",
-    price: "90 APT",
-    vintage: "2024",
-    certification: "Verra",
-    icon: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 4,
-    name: "Solar Farm Initiative (California)",
-    volume: "3,000 tCO2e",
-    price: "120 APT",
-    vintage: "2024",
-    certification: "Gold Standard",
-    icon: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 5,
-    name: "Mangrove Restoration (Philippines)",
-    volume: "1,200 tCO2e",
-    price: "85 APT",
-    vintage: "2023",
-    certification: "Verra",
-    icon: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 6,
-    name: "Biogas Plant (India)",
-    volume: "950 tCO2e",
-    price: "75 APT",
-    vintage: "2023",
-    certification: "Gold Standard",
-    icon: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 7,
-    name: "Ocean Carbon Sequestration",
-    volume: "2,500 tCO2e",
-    price: "200 APT",
-    vintage: "2024",
-    certification: "Blue Carbon",
-    icon: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 8,
-    name: "Sustainable Agriculture (Brazil)",
-    volume: "1,800 tCO2e",
-    price: "110 APT",
-    vintage: "2023",
-    certification: "Verra",
-    icon: "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=400&fit=crop&crop=center"
-  },
-  {
-    id: 9,
-    name: "Geothermal Energy (New Zealand)",
-    volume: "2,800 tCO2e",
-    price: "180 APT",
     name: "Direct Farm Capture Facility (Iceland)",
     volume: "3,200 tCO2e",
     price: "2.2 APT/Credit",
     vintage: "2024",
-    certification: "Gold Standard",
-    icon: "https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=400&h=400&fit=crop&crop=center"
     certification: "Verra - Gold Standard",
     icon: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=100&h=100&fit=crop&crop=center"
   },
@@ -132,8 +66,6 @@ const carbonCredits = [
 const filters = {
   category: ["Renewable Energy", "Forestry", "Agriculture", "Industrial"],
   vintage: ["2024", "2023", "2022"],
-  priceRange: ["0-100", "100-150", "150-200", "200+"],
-  certification: ["Gold Standard", "Verra", "Blue Carbon", "Others"]
   priceRange: ["0-2 APT", "2-3 APT", "3-4 APT", "4+ APT"],
   certification: ["Gold Standard", "Verra", "Others"]
 };
@@ -270,26 +202,8 @@ export default function MarketplacePage() {
 
           {/* Credits Grid */}
           <div className="flex-1">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {currentProjects.map((credit) => (
-                <div key={credit.id} className="bg-[#0D1522] border border-gray-800 rounded-lg overflow-hidden hover:border-gray-700 transition-all duration-200">
-                  {/* Large Image at the top */}
-                  <div className="relative w-full h-48">
-                    <Image
-                      src={credit.icon}
-                      alt={credit.name}
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  
-                  {/* Project details below the image */}
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h3 className="font-semibold text-lg mb-2">{credit.name}</h3>
-                      <p className="text-gray-400">Volume: {credit.volume}</p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-              {carbonCredits.map((credit) => (
+              {currentProjects.map((credit) => (
                 <div key={credit.id} className="bg-[#0D1522] border border-gray-800 rounded-xl overflow-hidden hover:border-gray-700 hover:shadow-lg hover:shadow-green-500/10 transition-all duration-300 transform hover:-translate-y-1">
                   {/* Large Image Header */}
                   <div className="relative w-full h-48">
@@ -317,12 +231,6 @@ export default function MarketplacePage() {
                       </div>
                       <p className="text-gray-400">Vintage: <span className="text-white">{credit.vintage}</span></p>
                     </div>
-                    <div className="space-y-2 mb-6">
-                      <p className="text-green-500 text-xl font-bold">{credit.price}</p>
-                      <p className="text-gray-400">Vintage: {credit.vintage}</p>
-                      <p className="text-gray-400">Certification: {credit.certification}</p>
-                    </div>
-                    <button className="w-full py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-all duration-200">
                     <button className="w-full py-3 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-200 font-semibold shadow-lg hover:shadow-green-500/25">
                       Buy Now
                     </button>
