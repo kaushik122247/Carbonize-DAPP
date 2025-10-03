@@ -18,7 +18,7 @@ const truncateAddress = (address: string): string => {
 
 export const UserWallet: React.FC<UserWalletProps> = ({ 
   walletAddress,
-  profileImageUrl = "/images/default-avatar.png" // Fallback image
+  profileImageUrl = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" // Fallback image
 }) => {
   const truncatedAddress = truncateAddress(walletAddress);
 
