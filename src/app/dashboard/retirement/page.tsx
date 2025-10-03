@@ -12,42 +12,42 @@ const carbonProjects = [
     name: "Amazon Reforeestation Project",
     certification: "Baage Mnrld Verified",
     vintage: "2023",
-    icon: "/images/forest-icon.png"
+    icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: 2,
     name: "Offshire Wind Farm",
     certification: "Verra Verified",
     vintage: "2023",
-    icon: "/images/wind-icon.png"
+    icon: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: 3,
     name: "Offshe Refostation Project",
     certification: "Verra Verified",
     vintage: "2024",
-    icon: "/images/forest-icon.png"
+    icon: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: 4,
     name: "Amazon Reforestation Project",
     certification: "Verra Verified",
     vintage: "2024",
-    icon: "/images/forest-icon.png"
+    icon: "https://images.unsplash.com/photo-1448375240586-882707db888b?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: 5,
     name: "Offsh Wind Farm",
     certification: "Verra Verified",
     vintage: "2024",
-    icon: "/images/wind-icon.png"
+    icon: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: 6,
     name: "Offtner Setaed Dealitin",
     certification: "Verra Verified",
     vintage: "2024",
-    icon: "/images/forest-icon.png"
+    icon: "https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=400&fit=crop&crop=center"
   }
 ];
 

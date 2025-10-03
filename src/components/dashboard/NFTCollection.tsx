@@ -8,15 +8,22 @@ const nftCollection = [
     id: 1,
     title: "Rie Maynil",
     description: "Carbon Credits",
-    value: "9 APT",
-    image: "/images/nft-placeholder-1.png"
+    value: "130 APT",
+    image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop&crop=center"
   },
   {
     id: 2,
     title: "Tirlie Mase",
     description: "Carbon Credits",
-    value: "12 APT",
-    image: "/images/nft-placeholder-2.png"
+    value: "120 APT",
+    image: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=400&h=300&fit=crop&crop=center"
+  },
+  {
+    id: 3,
+    title: "Ocean Breeze",
+    description: "Marine Carbon Credits",
+    value: "175 APT",
+    image: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop&crop=center"
   },
   // Add more NFTs as needed
 ];

@@ -20,21 +20,21 @@ const nftData: NFTType[] = [
     name: "Andes Mountain Reforestation Project",
     vintage: "2023",
     certification: "Verra Verified",
-    icon: "/images/tree-icon.png"
+    icon: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: "2",
     name: "Offshore Wind Farm",
     vintage: "2022",
     certification: "Verra Verified",
-    icon: "/images/wind-icon.png"
+    icon: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=400&h=400&fit=crop&crop=center"
   },
   {
     id: "3",
     name: "Direct Farm Expansion (Texas)",
     vintage: "2023",
     certification: "Verra Verified",
-    icon: "/images/farm-icon.png"
+    icon: "https://images.unsplash.com/photo-1560493676-04071c5f467b?w=400&h=400&fit=crop&crop=center"
   }
 ];
 
