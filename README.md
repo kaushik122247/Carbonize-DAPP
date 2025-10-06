@@ -1,6 +1,6 @@
 <div align="center">
-  <img width = "200" alt="loop" src="./public/images/logo.png" />
-  <p><h3>Making Carbon Credit Trading Transparent, Traceable, and Global.</h3></p>
+  <img width = "110" alt="loop" src="./public/images/logo.png" />
+  <p><h4>Making Carbon Credit Trading Transparent, Traceable, and Global.</h4></p>
 
 <br/>
 <p align="center">
@@ -20,3 +20,115 @@
 </div>
 
 ### 📌 Submitted on Aptos Ctrl+Move Hackathon
+Carbonize is a decentralized carbon credit trading and management platform built on blockchain. It enables individuals and organizations to seamlessly buy, sell, and retire tokenized carbon credits while ensuring full transparency, traceability, and global accessibility in climate action.
+
+
+## Live Demos & Deliverables
+- **Demo Video (Click below to watch the youtube video):** - [Carbonize BuildShowcase | Project Demo]() <br>
+<a href="" target="_blank">
+<img width="300"  alt="BUILDSHOWCASE LOOPR" src="./public/images/BUILDSHOWCASE.png" />
+
+</a>
+
+- **For Demo Experience** - Scroll below ↓
+
+---
+
+## 🎯 Objective
+### What Problem Does Our Project Solve?
+
+**Carbonize** is a decentralized platform that simplifies how companies and organizations use carbon credits to offset their carbon emissions and demonstrate measurable CO₂ reduction. By **tokenizing carbon credits** on the blockchain, Carbonize ensures **transparency**, **traceability**, and **security in every transaction**. This allows businesses to easily buy, sell, and verify carbon credits in real time, creating a trusted and efficient carbon marketplace. Through this system, Carbonize empowers organizations to prove their environmental impact while contributing to global sustainability efforts.
+
+### Who Does It Serve?
+
+**Carbonize** empowers a diverse range of participants in the carbon credit ecosystem, creating a transparent and efficient platform for everyone involved in climate action.
+
+🌍 **Project Developers** – Easily tokenize verified carbon credits and access global liquidity with 24/7 trading opportunities.
+
+🏢 **Enterprises** – Seamlessly offset carbon emissions while showcasing verifiable sustainability efforts to customers and stakeholders.
+
+🤝 **Brokers & Traders** – Benefit from a decentralized marketplace with instant settlements, clear pricing, and enhanced market access.
+
+💚 **Individuals** – Effortlessly buy, sell, or retire carbon credits, enabling direct participation in global climate action.
+
+By bringing all these participants together through **blockchain technology**, Carbonize fosters trust, transparency, and efficiency in the carbon credit market.
+
+---
+
+## 🧠 Our Approach
+
+
+
+
+
+
+
+## 🛠️ Tech Stack
+
+### Carbonize - Web SDK:
+- Language: TypeScript
+- Framework: React
+- Blockchain: 
+
+
+---
+## How it looks (UI Walkthrough)! 
+
+
+
+---
+
+## Carbonize Architecture:
+
+
+
+## <img src = "https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width = "24"/> Run Locally
+
+
+
+
+
+
+### 👋Connect with us:  
+
+<table align="left">
+  <tr>
+    <td><img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/7bb1e704-6026-48f9-8435-2f4d40101348" width="50"></td>
+    <td><h4>Built by the Carbonize Team</h4></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <table>
+        <tr>
+          <td align="center">
+            <a href="https://github.com/kaushik122247">
+              <img src="./public/images/team/kaushik.jpg" width="80" height="80"><br>
+              <sub><b>@kaushik122247</b></sub>
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://github.com/Pushpender-18">
+              <img src="./public/images/team/pushpender.jpg" width="80" height="80"><br>
+              <sub><b>@Pushpender-18</b></sub>
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://github.com/Sushant1407">
+              <img src="./public/images/team/sushant.jpg" width="80" height="80"><br>
+              <sub><b>@Sushant1407</b></sub>
+            </a>
+          </td>
+          <td align="center">
+            <a href="https://github.com/Taran206">
+              <img src="./public/images/team/taran.jpg" width="80" height="80"><br>
+              <sub><b>@Taran206</b></sub>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div align="center"> <strong>We're actively building, debugging, and prototyping —<br>drop a ⭐, share your feedback, or just vibe with us!</strong> <br/><br/> <img src="https://github.com/Anmol-Baranwal/Cool-GIFs-For-GitHub/assets/74038190/491e3e44-11a0-487a-b07b-717f677bbe4a" width="170" /> </div>
+
