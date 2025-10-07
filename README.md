@@ -66,20 +66,34 @@ By bringing all these participants together through **blockchain technology**, C
 ## 🛠️ Tech Stack
 
 ### Carbonize - Web SDK:
-- Language: TypeScript
-- Framework: React
-- Blockchain: 
+- #### Frontend
+  - **Next.js (React):** Framework for rendering the UI, routing, and providing server-side capabilities (for API routes/indexers).
+
+  - **Tailwind CSS:** Utility-first CSS framework for rapid and responsive styling.
 
 
+- #### Aptos Interaction
+  - **aptos-labs/ts-sdk:** The official TypeScript SDK for constructing and submitting transactions, and fetching on-chain data.
+
+  - **aptos-labs/wallet-adapter-react:** Hooks and context providers to easily connect popular Aptos wallets (Petra, Martian, etc.) to your React application.
 ---
 ## How it looks (UI Walkthrough)! 
-
+<div align="left">
+  <img width="400" alt="image" src="./public/images/ui/images/landing_page.png" style="margin-right: 20px;" />
+  <img width="400" alt="image" src="./public/images/ui/images/signup_page.png" style="margin-right: 20px;" />
+  <img width="400" alt="image" src="./public/images/ui/images/Dashboard_page.png" style="margin-right: 20px;" />
+  <img width="400" alt="image" src="./public/images/ui/images/Mint_nft_page.png" style="margin-right: 20px;" />
+  <img width="400" alt="image" src="./public/images/ui/images/marketplace.png" style="margin-right: 20px;" />
+  <img width="400" alt="image" src="./public/images/ui/images/retire_page.png" style="margin-right: 20px;" />
+</div>
 
 
 ---
 
 ## Carbonize Architecture:
+<img width="400" alt="image" src="./public/images/architecture/WhatsApp Image 2025-10-07 at 15.35.07_93ae5a54.jpg" style="margin-right: 20px;" />
 
+<img width="400" alt="image" src="./public/images/architecture/WhatsApp Image 2025-10-07 at 15.35.07_c6bc7506.jpg" style="margin-right: 20px;" />
 
 
 ## <img src = "https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width = "24"/> Run Locally
