@@ -98,9 +98,46 @@ By bringing all these participants together through **blockchain technology**, C
 
 ## <img src = "https://user-images.githubusercontent.com/74038190/212284087-bbe7e430-757e-4901-90bf-4cd2ce3e1852.gif" width = "24"/> Run Locally
 
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v18 or higher recommended)
+- [pnpm](https://pnpm.io/) or npm
 
+### Clone the Repository
+```bash
+git clone https://github.com/kaushik122247/Carbonize-DAPP
+cd Carbonize-DAPP
+```
 
+### Install Dependencies
+You can use either pnpm or npm.
 
+- Using pnpm (recommended)
+```
+pnpm install
+```
+
+- Using npm
+```
+npm install
+```
+
+### Start the Development Server
+- Using pnpm
+```
+pnpm run dev
+```
+
+- Using npm
+```
+npm run dev
+```
+
+### Open in Browser
+
+Once the server starts, open your browser and go to:
+```
+http://localhost:3000
+```
 
 
 ### 👋Connect with us:  
