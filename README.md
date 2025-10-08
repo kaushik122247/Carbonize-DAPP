@@ -24,8 +24,8 @@ Carbonize is a decentralized carbon credit trading and management platform built
 
 
 ## Live Demos & Deliverables
-- **Demo Video (Click below to watch the youtube video):** - [Carbonize BuildShowcase | Project Demo]() <br>
-<a href="" target="_blank">
+- **Demo Video (Click below to watch the youtube video):** - [Carbonize BuildShowcase | Project Demo](https://youtu.be/HbERctYGkAQ) <br>
+<a href="https://youtu.be/HbERctYGkAQ" target="_blank">
 <img width="300"  alt="BUILDSHOWCASE LOOPR" src="./public/images/BUILDSHOWCASE.png" />
 
 </a>
